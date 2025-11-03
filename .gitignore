@@ -1,3 +1,8 @@
+#Intellij files
+*.iml
+*.xml
+
+
 # Compiled class file
 *.class
 
