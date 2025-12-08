@@ -29,5 +29,11 @@ public class StringTemplateExample {
 
 
 
+        int x = 10;
+        int y = 20;
+
+        // Looks like concatenation, but it's template interpolation
+        String s = STR."Sum of \{x} + \{y} = \{x + y}"; //The expression inside \{} is evaluated immediately.
+        System.out.println(s); // Output: Sum of 10 + 20 = 30
     }
 }
