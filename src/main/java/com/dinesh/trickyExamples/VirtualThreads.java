@@ -1,5 +1,6 @@
 package com.dinesh.trickyExamples;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -72,5 +73,26 @@ public class VirtualThreads {
 //        Java can easily schedule millions since they are lightweight.
 //        try (executor) ensures graceful shutdown after all threads finish.
 //        The only constraint: you may run out of memory if each thread holds too much local state.
+
+        try (var exec = Executors.newVirtualThreadPerTaskExecutor()) {
+            for (int i = 0; i < 1_000_000; i++) {
+                exec.submit(() -> {
+                    try {
+                        System.in.read();  // blocking call
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+            }
+        }
+
+        //Above code will freeze
+        //
+        // Virtual threads stop scaling
+        //
+        //Entire system freezes
+        //
+        //Only one thread can read from System.in
+
     }
 }
