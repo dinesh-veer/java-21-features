@@ -27,6 +27,17 @@ public class PatternMatching {
 
     public static void main(String[] args) {
         test(new Point(5, 10));
+
+        Object obj = "TRUE";
+
+
+        switch (obj) {
+            case String s when s.equalsIgnoreCase("true") -> System.out.println("Matched TRUE");
+            case String s -> System.out.println("Just a string: " + s);
+            default -> System.out.println("Unknown");
+        }
+        //Trick: The first case matches "TRUE" because of the guard.
+        // Without the guard, it would fall into the second case.
     }
 
 }
