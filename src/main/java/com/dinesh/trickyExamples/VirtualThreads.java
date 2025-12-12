@@ -54,6 +54,21 @@ public class VirtualThreads {
 //              So it doesn’t block an OS thread, which is why virtual threads scale so well.
 
 
+        //is their any difference between below 2 thread creation
+
+        // Direct virtual thread
+        Thread t = Thread.ofVirtual().start(() -> System.out.println("Direct virtual thread"));
+        t.join();
+
+        // Executor-managed virtual thread
+        try (var executor1 = Executors.newVirtualThreadPerTaskExecutor()) {
+            Future<?> f = executor1.submit(() -> System.out.println("Executor virtual thread"));
+            f.get(); // Wait for completion
+        }
+
+        //Ans: Thread.ofVirtual().start() returns a Thread, while submit() returns a Future<?>.
+        // Many devs expect them to behave the same.
+
         //is below code is safe
 
         var executor = Executors.newVirtualThreadPerTaskExecutor();
@@ -62,7 +77,8 @@ public class VirtualThreads {
                 executor.submit(() -> {
                     try {
                         Thread.sleep(1000);
-                    } catch (InterruptedException e) {}
+                    } catch (InterruptedException e) {
+                    }
                 });
             }
         }
@@ -74,25 +90,24 @@ public class VirtualThreads {
 //        try (executor) ensures graceful shutdown after all threads finish.
 //        The only constraint: you may run out of memory if each thread holds too much local state.
 
-        try (var exec = Executors.newVirtualThreadPerTaskExecutor()) {
-            for (int i = 0; i < 1_000_000; i++) {
-                exec.submit(() -> {
-                    try {
-                        System.in.read();  // blocking call
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                });
+            try (var exec = Executors.newVirtualThreadPerTaskExecutor()) {
+                for (int i = 0; i < 1_000_000; i++) {
+                    exec.submit(() -> {
+                        try {
+                            System.in.read();  // blocking call
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
+                }
             }
+
+            //Above code will freeze
+            //
+            // Virtual threads stop scaling
+            //
+            //Entire system freezes
+            //
+            //Only one thread can read from System.in
         }
-
-        //Above code will freeze
-        //
-        // Virtual threads stop scaling
-        //
-        //Entire system freezes
-        //
-        //Only one thread can read from System.in
-
-    }
 }
