@@ -1,0 +1,156 @@
+
+```markdown
+# Java 21 Features 🚀
+
+A curated collection of **Java 21** feature demonstrations and code examples — ideal for learning, experimentation, and reference.
+
+This repository showcases the most important additions and improvements in **Java JDK 21**, the latest Long-Term Support (LTS) release of the Java language. :contentReference[oaicite:0]{index=0}
+
+---
+
+## 🚧 Status
+
+| Feature | Status |
+|---------|--------|
+| Virtual Threads (Project Loom) | Final |
+| Structured Concurrency | Preview |
+| Scoped Values | Preview |
+| Pattern Matching (instanceof & switch) | Final / Preview |
+| Sequenced Collections | Final |
+| String Templates | Preview |
+| Foreign Function & Memory API | Third Preview |
+| Unnamed Patterns & Variables | Preview |
+
+Some features require compiling with **preview flags**. :contentReference[oaicite:1]{index=1}
+
+---
+
+## 📁 Repository Structure
+
+```
+
+java-21-features/
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/dinesh/
+│               ├── virtualthreads/
+│               ├── patternmatching/
+│               ├── sequencedcollections/
+│               ├── stringtemplates/
+│               └── scopedvalues/
+├── .gitignore
+├── LICENSE
+└── README.md
+
+````
+
+Each package contains self-contained examples illustrating the feature in action.
+
+---
+
+## 🧠 Java 21 Highlights
+
+### 🧵 1. Virtual Threads (JEP 444)
+Lightweight concurrency support for massive numbers of threads with minimal resource usage.
+
+Example:
+```java
+try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+    executor.submit(() -> System.out.println("Hello from a virtual thread!"));
+}
+````
+
+---
+
+### 🔎 2. Pattern Matching Enhancements
+
+Destructure records and types more expressively:
+
+```java
+if (obj instanceof Point(int x, int y)) {
+    System.out.println(x + y);
+}
+```
+
+---
+
+### 📦 3. Sequenced Collections (JEP 431)
+
+New interfaces for defining **ordered collections** with first/last element access.
+
+Example:
+
+```java
+SequencedCollection<String> seq = new LinkedList<>();
+seq.addLast("A");
+```
+
+---
+
+### 📜 4. String Templates (JEP 430 — Preview)
+
+Improved safe string interpolation:
+
+```java
+String result = STR."Hello \{name}";
+```
+
+⚠ Requires preview flags to compile/run. ([Javacody][1])
+
+---
+
+### 🌐 5. Scoped Values
+
+Safer alternative to `ThreadLocal` especially when used with virtual threads.
+
+---
+
+## 🧪 How to Compile / Run with Preview
+
+Some examples use preview language features. To compile & run:
+
+```bash
+javac --enable-preview --release 21 $(find . -name "*.java")
+java --enable-preview -cp . com.dinesh.Main
+```
+
+Or using Maven:
+
+```xml
+<configuration>
+  <release>21</release>
+  <compilerArgs>--enable-preview</compilerArgs>
+</configuration>
+```
+
+---
+
+## 📝 Notes
+
+* This repository assumes **JDK 21** installed and available on your `PATH`.
+* Some features are **preview**; they will not compile/run without enabling preview support. ([Oracle Docs][2])
+* Refer to the official OpenJDK JEPs for detailed spec and examples.
+
+---
+
+## 📚 References
+
+* Official Java 21 release notes & feature list. ([Oracle][3])
+* Comprehensive breakdown of Java 21 language and library improvements. ([baeldung.com][4])
+
+---
+
+## ❤️ License
+
+This repository is licensed under the **MIT License** — see `LICENSE` for details.
+
+---
+
+## 🚀 Contributions
+
+Feel free to submit pull requests adding more examples or improving explanations — especially for preview features!
+
+```
+
+---
