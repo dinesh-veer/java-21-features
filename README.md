@@ -141,16 +141,32 @@ Or using Maven:
 
 ---
 
-## ❤️ License
+## 🧾 License
 
-This repository is licensed under the **MIT License** — see `LICENSE` for details.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 🚀 Contributions
+## 🙌 Contributing
 
-Feel free to submit pull requests adding more examples or improving explanations — especially for preview features!
+Feel free to fork the repo, add new Java 11 features or examples, and submit pull requests.
 
-```
+---
+
+## 🔗 Repository
+
+[github.com/dinesh-veer/java-21-features](https://github.com/dinesh-veer/java-21-features)
+
+---
+
+## 📬 Contact
+
+For questions, feedback, or collaboration:
+
+**Dinesh Veer**
+
+📧 Email: [dveer123@hotmail.com](mailto:dveer123@hotmail.com)
+
+🔗 GitHub: [@dinesh-veer](https://github.com/dinesh-veer)
 
 ---
