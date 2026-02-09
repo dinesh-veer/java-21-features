@@ -1,5 +1,4 @@
 
-```markdown
 # Java 21 Features 🚀
 
 A curated collection of **Java 21** feature demonstrations and code examples — ideal for learning, experimentation, and reference.
@@ -149,7 +148,16 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🙌 Contributing
 
-Feel free to fork the repo, add new Java 11 features or examples, and submit pull requests.
+Feel free to fork the repo, add new Java 21 features or examples, and submit pull requests.
+
+If you find this project useful or plan to use it as a reference:
+
+* ⭐ **Star the repository** to show your support
+* 🍴 **Fork the repository** to experiment, customize, and extend it
+
+Starring helps others discover the project, and forking allows you to safely modify and learn without affecting the original codebase.
+
+Thank you for your support! 🙌
 
 ---
 
