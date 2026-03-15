@@ -1,5 +1,18 @@
 
 # Java 21 Features 🚀
+<p align="center">
+
+<img src="https://img.shields.io/badge/Java-21-blue?style=for-the-badge&logo=java" />
+<img src="https://img.shields.io/badge/JDK-LTS-orange?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Maven-Build-red?style=for-the-badge&logo=apachemaven" />
+<img src="https://img.shields.io/github/stars/dinesh-veer/java-21-features?style=for-the-badge" />
+<img src="https://img.shields.io/github/forks/dinesh-veer/java-21-features?style=for-the-badge" />
+<img src="https://img.shields.io/github/last-commit/dinesh-veer/java-21-features?style=for-the-badge" />
+<img src="https://img.shields.io/github/repo-size/dinesh-veer/java-21-features?style=for-the-badge" />
+<img src="https://img.shields.io/github/license/dinesh-veer/java-21-features?style=for-the-badge" />
+
+</p>
+
 
 A curated collection of **Java 21** feature demonstrations and code examples — ideal for learning, experimentation, and reference.
 
