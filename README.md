@@ -62,6 +62,15 @@ Each package contains self-contained examples illustrating the feature in action
 ---
 
 ## 🧠 Java 21 Highlights
+<p align="center">
+
+<img src="https://img.shields.io/badge/Virtual%20Threads-JEP%20444-green?style=flat-square" />
+<img src="https://img.shields.io/badge/Sequenced%20Collections-JEP%20431-blue?style=flat-square" />
+<img src="https://img.shields.io/badge/String%20Templates-JEP%20430-purple?style=flat-square" />
+<img src="https://img.shields.io/badge/Record%20Patterns-JEP%20440-orange?style=flat-square" />
+
+</p>
+
 
 ### 🧵 1. Virtual Threads (JEP 444)
 Lightweight concurrency support for massive numbers of threads with minimal resource usage.
