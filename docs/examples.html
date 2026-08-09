@@ -1,0 +1,742 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Java 21 Examples | Documentation</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Java 21 Features
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="features.html">Features</a>
+
+        <a href="jeps.html">JEPs</a>
+
+        <a href="examples.html">Examples</a>
+
+        <a href="installation.html">Installation</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Java 21 Examples
+        </h1>
+
+        <p>
+            Practical examples demonstrating modern
+            Java 21 language, concurrency and API features.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="content">
+
+    <h1>
+        About the Examples
+    </h1>
+
+    <p>
+
+        The repository contains small, focused examples
+        intended to demonstrate Java 21 features in isolation.
+
+        Each example can be studied independently to understand
+        the syntax and behaviour of the corresponding feature.
+
+    </p>
+
+    <p>
+
+        The examples are designed primarily for learning,
+        experimentation and reference.
+
+    </p>
+
+</section>
+
+
+<section class="cards">
+
+
+    <div class="card">
+
+        <h2>
+            Virtual Threads
+        </h2>
+
+        <p>
+
+            Demonstrates lightweight concurrency using
+            Java virtual threads.
+
+        </p>
+
+        <span>
+            JEP 444
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Structured Concurrency
+        </h2>
+
+        <p>
+
+            Demonstrates how related concurrent tasks
+            can be managed as a structured unit.
+
+        </p>
+
+        <span>
+            JEP 453
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Scoped Values
+        </h2>
+
+        <p>
+
+            Demonstrates scoped sharing of immutable
+            contextual data.
+
+        </p>
+
+        <span>
+            JEP 446
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Pattern Matching
+        </h2>
+
+        <p>
+
+            Demonstrates record patterns and
+            pattern matching with switch.
+
+        </p>
+
+        <span>
+            JEP 440 / JEP 441
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Sequenced Collections
+        </h2>
+
+        <p>
+
+            Demonstrates the new sequenced collection
+            interfaces and first/last element operations.
+
+        </p>
+
+        <span>
+            JEP 431
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            String Templates
+        </h2>
+
+        <p>
+
+            Demonstrates template-based string construction.
+
+        </p>
+
+        <span>
+            JEP 430
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Foreign Function & Memory API
+        </h2>
+
+        <p>
+
+            Demonstrates Java's API for interacting with
+            foreign functions and memory.
+
+        </p>
+
+        <span>
+            JEP 442
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Unnamed Patterns & Variables
+        </h2>
+
+        <p>
+
+            Demonstrates preview syntax for values that
+            intentionally do not need to be referenced.
+
+        </p>
+
+        <span>
+            JEP 443
+        </span>
+
+    </div>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Virtual Threads Example
+    </h2>
+
+    <p>
+
+        Virtual threads can be created directly using
+        the Java 21 threading API.
+
+    </p>
+
+    <pre><code>
+public class VirtualThreadExample {
+
+    public static void main(String[] args) {
+
+        Thread thread = Thread.startVirtualThread(() -> {
+
+            System.out.println(
+                "Running on virtual thread: "
+                + Thread.currentThread()
+            );
+
+        });
+
+        try {
+
+            thread.join();
+
+        } catch (InterruptedException e) {
+
+            Thread.currentThread().interrupt();
+
+        }
+
+    }
+
+}
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Virtual Thread Executor Example
+    </h2>
+
+    <p>
+
+        An executor can create a new virtual thread
+        for every submitted task.
+
+    </p>
+
+    <pre><code>
+try (var executor =
+         Executors.newVirtualThreadPerTaskExecutor()) {
+
+    for (int i = 0; i &lt; 10; i++) {
+
+        executor.submit(() -> {
+
+            System.out.println(
+                Thread.currentThread()
+            );
+
+        });
+
+    }
+
+}
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Record Pattern Example
+    </h2>
+
+    <pre><code>
+record Customer(
+    String name,
+    String email
+) {}
+
+Object value =
+    new Customer(
+        "Dinesh",
+        "dveer123@hotmail.com"
+    );
+
+if (value instanceof Customer(
+        String name,
+        String email
+)) {
+
+    System.out.println(name);
+    System.out.println(email);
+
+}
+    </code></pre>
+
+    <p>
+
+        Record patterns allow record components to be
+        extracted directly during pattern matching.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Pattern Matching for switch
+    </h2>
+
+    <pre><code>
+static String describe(Object value) {
+
+    return switch (value) {
+
+        case Integer number ->
+            "Integer: " + number;
+
+        case String text ->
+            "String: " + text;
+
+        default ->
+            "Unknown value";
+
+    };
+
+}
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Sequenced Collections Example
+    </h2>
+
+    <pre><code>
+SequencedCollection&lt;String&gt; values =
+        new ArrayList&lt;&gt;();
+
+values.add("Java");
+values.add("21");
+
+System.out.println(
+    values.getFirst()
+);
+
+System.out.println(
+    values.getLast()
+);
+    </code></pre>
+
+    <p>
+
+        Sequenced Collections provide a consistent API
+        for working with the beginning and end of
+        ordered collections.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        String Templates Example
+    </h2>
+
+    <pre><code>
+String name = "Dinesh";
+
+String message =
+        STR."Hello \{name}!";
+
+System.out.println(message);
+    </code></pre>
+
+    <p>
+
+        String Templates were a preview feature in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Scoped Values Example
+    </h2>
+
+    <pre><code>
+static final ScopedValue&lt;String&gt; USER =
+        ScopedValue.newInstance();
+
+ScopedValue.where(
+        USER,
+        "Dinesh"
+).run(() -> {
+
+    System.out.println(
+        USER.get()
+    );
+
+});
+    </code></pre>
+
+    <p>
+
+        Scoped Values allow immutable contextual data
+        to be made available within a bounded scope.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Structured Concurrency
+    </h2>
+
+    <p>
+
+        Structured Concurrency allows multiple related
+        tasks to be started and managed together.
+
+    </p>
+
+    <pre><code>
+try (var scope =
+         new StructuredTaskScope.ShutdownOnFailure()) {
+
+    var task1 = scope.fork(() ->
+        getCustomer()
+    );
+
+    var task2 = scope.fork(() ->
+        getOrders()
+    );
+
+    scope.join()
+         .throwIfFailed();
+
+    var customer = task1.get();
+    var orders = task2.get();
+
+}
+    </code></pre>
+
+    <p>
+
+        Structured Concurrency was a preview feature
+        in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Preview Features
+    </h2>
+
+    <p>
+
+        Several Java 21 examples use preview APIs or
+        language features.
+
+    </p>
+
+    <p>
+        Compile preview features using:
+    </p>
+
+    <pre><code>
+javac --enable-preview --release 21 Example.java
+    </code></pre>
+
+    <p>
+        Run them using:
+    </p>
+
+    <pre><code>
+java --enable-preview Example
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Maven Configuration
+    </h2>
+
+    <p>
+
+        For Maven projects using preview features,
+        configure the compiler with the Java 21 release
+        and preview flag.
+
+    </p>
+
+    <pre><code>
+&lt;properties&gt;
+
+    &lt;maven.compiler.release&gt;21&lt;/maven.compiler.release&gt;
+
+&lt;/properties&gt;
+
+&lt;build&gt;
+
+    &lt;plugins&gt;
+
+        &lt;plugin&gt;
+
+            &lt;groupId&gt;
+                org.apache.maven.plugins
+            &lt;/groupId&gt;
+
+            &lt;artifactId&gt;
+                maven-compiler-plugin
+            &lt;/artifactId&gt;
+
+            &lt;configuration&gt;
+
+                &lt;compilerArgs&gt;
+
+                    &lt;arg&gt;
+                        --enable-preview
+                    &lt;/arg&gt;
+
+                &lt;/compilerArgs&gt;
+
+            &lt;/configuration&gt;
+
+        &lt;/plugin&gt;
+
+    &lt;/plugins&gt;
+
+&lt;/build&gt;
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Running the Examples
+    </h2>
+
+    <pre><code>
+git clone https://github.com/dinesh-veer/java-21-features.git
+
+cd java-21-features
+
+mvn clean compile
+
+mvn test
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Recommended Learning Order
+    </h2>
+
+    <ol>
+
+        <li>
+            Pattern Matching
+        </li>
+
+        <li>
+            Record Patterns
+        </li>
+
+        <li>
+            Sequenced Collections
+        </li>
+
+        <li>
+            Virtual Threads
+        </li>
+
+        <li>
+            Scoped Values
+        </li>
+
+        <li>
+            Structured Concurrency
+        </li>
+
+        <li>
+            String Templates
+        </li>
+
+        <li>
+            Foreign Function & Memory API
+        </li>
+
+        <li>
+            Unnamed Patterns and Variables
+        </li>
+
+    </ol>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Source Code
+    </h2>
+
+    <p>
+
+        The complete source code is available in the
+        GitHub repository.
+
+    </p>
+
+    <a class="btn"
+       href="https://github.com/dinesh-veer/java-21-features"
+       target="_blank">
+
+        View Java 21 Repository
+
+    </a>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Dinesh Veer
+    </p>
+
+    <p>
+        Java 21 Features Documentation
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
