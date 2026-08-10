@@ -1,0 +1,787 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Java 21 Features | Documentation</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Java 21 Features
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="features.html">
+            Features
+        </a>
+
+        <a href="jeps.html">
+            JEPs
+        </a>
+
+        <a href="examples.html">
+            Examples
+        </a>
+
+        <a href="installation.html">
+            Installation
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Java 21 Features
+        </h1>
+
+        <p>
+
+            Explore the major features and improvements
+            introduced with Java 21.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="content">
+
+    <h1>
+        Java 21 Feature Overview
+    </h1>
+
+    <p>
+
+        Java 21 is a Long-Term Support release containing
+        important improvements to concurrency, pattern matching,
+        collections, string processing and native interoperability.
+
+    </p>
+
+</section>
+
+
+<section class="cards">
+
+
+    <div class="card">
+
+        <h2>
+            Virtual Threads
+        </h2>
+
+        <p>
+
+            Lightweight threads designed to make concurrent
+            applications easier to write and scale.
+
+        </p>
+
+        <span>
+            JEP 444
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Structured Concurrency
+        </h2>
+
+        <p>
+
+            Provides a structured approach for managing
+            groups of concurrent tasks.
+
+        </p>
+
+        <span>
+            JEP 453
+        </span>
+
+        <p>
+            Preview
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Scoped Values
+        </h2>
+
+        <p>
+
+            Provides a way to share immutable data
+            within and across threads.
+
+        </p>
+
+        <span>
+            JEP 446
+        </span>
+
+        <p>
+            Preview
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Pattern Matching
+        </h2>
+
+        <p>
+
+            Enhances pattern matching for instanceof,
+            switch and record patterns.
+
+        </p>
+
+        <span>
+            JEP 440 / JEP 441
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Sequenced Collections
+        </h2>
+
+        <p>
+
+            Introduces interfaces that provide
+            consistent first and last element operations.
+
+        </p>
+
+        <span>
+            JEP 431
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            String Templates
+        </h2>
+
+        <p>
+
+            Provides string interpolation and
+            template processing capabilities.
+
+        </p>
+
+        <span>
+            JEP 430
+        </span>
+
+        <p>
+            Preview
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Foreign Function & Memory API
+        </h2>
+
+        <p>
+
+            Enables Java programs to interact with
+            code and memory outside the JVM.
+
+        </p>
+
+        <span>
+            JEP 442
+        </span>
+
+        <p>
+            Third Preview
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Unnamed Patterns & Variables
+        </h2>
+
+        <p>
+
+            Allows developers to use unnamed patterns
+            and variables when their values are not required.
+
+        </p>
+
+        <span>
+            JEP 443
+        </span>
+
+        <p>
+            Preview
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Feature Status
+    </h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>
+                Feature
+            </th>
+
+            <th>
+                JEP
+            </th>
+
+            <th>
+                Status
+            </th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+            <td>
+                Virtual Threads
+            </td>
+
+            <td>
+                JEP 444
+            </td>
+
+            <td>
+                Final
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Structured Concurrency
+            </td>
+
+            <td>
+                JEP 453
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Scoped Values
+            </td>
+
+            <td>
+                JEP 446
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Record Patterns
+            </td>
+
+            <td>
+                JEP 440
+            </td>
+
+            <td>
+                Final
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Pattern Matching for switch
+            </td>
+
+            <td>
+                JEP 441
+            </td>
+
+            <td>
+                Final
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Sequenced Collections
+            </td>
+
+            <td>
+                JEP 431
+            </td>
+
+            <td>
+                Final
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                String Templates
+            </td>
+
+            <td>
+                JEP 430
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Foreign Function & Memory API
+            </td>
+
+            <td>
+                JEP 442
+            </td>
+
+            <td>
+                Third Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Unnamed Patterns & Variables
+            </td>
+
+            <td>
+                JEP 443
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        1. Virtual Threads
+    </h2>
+
+    <p>
+
+        Virtual Threads are lightweight threads designed
+        to support large numbers of concurrent tasks
+        with efficient resource usage.
+
+    </p>
+
+    <pre><code>
+try (var executor =
+         Executors.newVirtualThreadPerTaskExecutor()) {
+
+    executor.submit(() ->
+        System.out.println(
+            "Hello from a virtual thread!"
+        )
+    );
+}
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        2. Structured Concurrency
+    </h2>
+
+    <p>
+
+        Structured Concurrency provides an approach for
+        treating related concurrent tasks as a single unit
+        of work.
+
+    </p>
+
+    <p>
+
+        This feature was available as a preview feature
+        in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        3. Scoped Values
+    </h2>
+
+    <p>
+
+        Scoped Values provide a mechanism for sharing
+        immutable data across a bounded scope of execution.
+
+    </p>
+
+    <p>
+
+        They are particularly useful together with
+        lightweight concurrency mechanisms such as
+        virtual threads.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        4. Pattern Matching
+    </h2>
+
+    <p>
+
+        Java 21 finalizes pattern matching improvements
+        for switch and record patterns.
+
+    </p>
+
+    <pre><code>
+if (obj instanceof Point(int x, int y)) {
+
+    System.out.println(x + y);
+
+}
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        5. Sequenced Collections
+    </h2>
+
+    <p>
+
+        Sequenced Collections provide common operations
+        for accessing elements at the beginning and end
+        of ordered collections.
+
+    </p>
+
+    <pre><code>
+SequencedCollection&lt;String&gt; seq =
+        new LinkedList&lt;&gt;();
+
+seq.addLast("A");
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        6. String Templates
+    </h2>
+
+    <p>
+
+        String Templates provide a template-based approach
+        for combining strings and embedded expressions.
+
+    </p>
+
+    <pre><code>
+String result = STR."Hello \{name}";
+    </code></pre>
+
+    <p>
+
+        String Templates were a preview feature in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        7. Foreign Function & Memory API
+    </h2>
+
+    <p>
+
+        The Foreign Function & Memory API provides
+        Java applications with a mechanism for interacting
+        with native code and memory outside the JVM.
+
+    </p>
+
+    <p>
+
+        The Java 21 version was the third preview of this API.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        8. Unnamed Patterns & Variables
+    </h2>
+
+    <p>
+
+        Unnamed patterns and variables allow developers
+        to indicate explicitly that a matched value
+        or variable is intentionally unused.
+
+    </p>
+
+    <p>
+
+        This feature was available as a preview feature
+        in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Preview Features
+    </h2>
+
+    <p>
+
+        Some examples in this repository use Java 21
+        preview features.
+
+    </p>
+
+    <p>
+
+        Preview features require the preview option
+        during compilation and execution.
+
+    </p>
+
+    <pre><code>
+--enable-preview
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Repository Packages
+    </h2>
+
+    <p>
+
+        The repository organizes examples by feature.
+
+    </p>
+
+    <pre>
+
+src/main/java/com/dinesh/
+
+├── virtualthreads/
+├── patternmatching/
+├── sequencedcollections/
+├── stringtemplates/
+└── scopedvalues/
+
+    </pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Learn More
+    </h2>
+
+    <p>
+
+        Use the JEP page for the detailed Java Enhancement
+        Proposal reference and the Examples page to explore
+        the examples available in the repository.
+
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                JEP Reference
+            </h3>
+
+            <a href="jeps.html">
+                View JEPs →
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Code Examples
+            </h3>
+
+            <a href="examples.html">
+                View Examples →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Dinesh Veer
+    </p>
+
+    <p>
+        Java 21 Features Documentation
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
