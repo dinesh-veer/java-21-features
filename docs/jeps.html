@@ -1,0 +1,786 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Java 21 JEPs | Documentation</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Java 21 Features
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="features.html">Features</a>
+
+        <a href="jeps.html">JEPs</a>
+
+        <a href="examples.html">Examples</a>
+
+        <a href="installation.html">Installation</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Java 21 JEP Reference
+        </h1>
+
+        <p>
+            Java Enhancement Proposals associated with
+            the features demonstrated in this repository.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="content">
+
+    <h1>
+        What is a JEP?
+    </h1>
+
+    <p>
+
+        JEP stands for
+        <strong>JDK Enhancement Proposal</strong>.
+
+        JEPs describe proposed enhancements and changes
+        to the Java Development Kit.
+
+    </p>
+
+    <p>
+
+        This page provides a quick reference to the
+        Java 21 JEPs relevant to the features covered
+        by this project.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Java 21 JEP Summary
+    </h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>
+                JEP
+            </th>
+
+            <th>
+                Feature
+            </th>
+
+            <th>
+                Status in Java 21
+            </th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+            <td>
+                JEP 430
+            </td>
+
+            <td>
+                String Templates
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 431
+            </td>
+
+            <td>
+                Sequenced Collections
+            </td>
+
+            <td>
+                Final
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 440
+            </td>
+
+            <td>
+                Record Patterns
+            </td>
+
+            <td>
+                Final
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 441
+            </td>
+
+            <td>
+                Pattern Matching for switch
+            </td>
+
+            <td>
+                Final
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 442
+            </td>
+
+            <td>
+                Foreign Function & Memory API
+            </td>
+
+            <td>
+                Third Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 443
+            </td>
+
+            <td>
+                Unnamed Patterns and Variables
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 444
+            </td>
+
+            <td>
+                Virtual Threads
+            </td>
+
+            <td>
+                Final
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 445
+            </td>
+
+            <td>
+                Unnamed Classes and Instance Main Methods
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 446
+            </td>
+
+            <td>
+                Scoped Values
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                JEP 453
+            </td>
+
+            <td>
+                Structured Concurrency
+            </td>
+
+            <td>
+                Preview
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 430 — String Templates
+    </h2>
+
+    <p>
+
+        String Templates provide a template mechanism
+        for combining literal text with embedded expressions.
+
+    </p>
+
+    <pre><code>
+String name = "Dinesh";
+
+String message = STR."Hello \{name}";
+    </code></pre>
+
+    <p>
+
+        String Templates were a preview feature in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 431 — Sequenced Collections
+    </h2>
+
+    <p>
+
+        Sequenced Collections introduce common interfaces
+        for collections that have a defined encounter order.
+
+    </p>
+
+    <p>
+
+        They provide consistent operations such as
+        first and last element access.
+
+    </p>
+
+    <pre><code>
+SequencedCollection&lt;String&gt; values =
+        new LinkedList&lt;&gt;();
+
+values.addFirst("Java");
+values.addLast("21");
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 440 — Record Patterns
+    </h2>
+
+    <p>
+
+        Record Patterns allow record components to be
+        directly extracted during pattern matching.
+
+    </p>
+
+    <pre><code>
+record Point(int x, int y) {}
+
+Object value = new Point(10, 20);
+
+if (value instanceof Point(int x, int y)) {
+
+    System.out.println(x);
+    System.out.println(y);
+
+}
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 441 — Pattern Matching for switch
+    </h2>
+
+    <p>
+
+        Pattern Matching for switch allows switch expressions
+        and statements to work with type patterns.
+
+    </p>
+
+    <pre><code>
+static String describe(Object value) {
+
+    return switch (value) {
+
+        case Integer i ->
+                "Integer: " + i;
+
+        case String s ->
+                "String: " + s;
+
+        default ->
+                "Unknown";
+
+    };
+
+}
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 442 — Foreign Function & Memory API
+    </h2>
+
+    <p>
+
+        The Foreign Function & Memory API provides
+        mechanisms for Java applications to interact
+        with native code and memory outside the JVM.
+
+    </p>
+
+    <p>
+
+        In Java 21 this API was delivered as its
+        third preview.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 443 — Unnamed Patterns and Variables
+    </h2>
+
+    <p>
+
+        Unnamed patterns and variables allow developers
+        to explicitly indicate that a matched value
+        is not required.
+
+    </p>
+
+    <pre><code>
+if (obj instanceof String _) {
+
+    System.out.println("String value");
+
+}
+    </code></pre>
+
+    <p>
+
+        This feature was a preview feature in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 444 — Virtual Threads
+    </h2>
+
+    <p>
+
+        Virtual Threads are lightweight threads that make
+        it easier to build highly concurrent applications.
+
+    </p>
+
+    <pre><code>
+Thread.startVirtualThread(() -> {
+
+    System.out.println(
+        "Running on a virtual thread"
+    );
+
+});
+    </code></pre>
+
+    <p>
+
+        Virtual Threads became a final feature in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 445 — Unnamed Classes and Instance Main Methods
+    </h2>
+
+    <p>
+
+        This preview feature simplifies small Java programs
+        by allowing developers to write code without the
+        traditional public static void main structure.
+
+    </p>
+
+    <p>
+
+        It is intended to make Java easier to learn and
+        suitable for small programs and educational examples.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 446 — Scoped Values
+    </h2>
+
+    <p>
+
+        Scoped Values provide a mechanism for sharing
+        immutable data within a bounded execution scope.
+
+    </p>
+
+    <p>
+
+        They are particularly useful for concurrent
+        applications and work well with virtual threads.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP 453 — Structured Concurrency
+    </h2>
+
+    <p>
+
+        Structured Concurrency treats groups of related
+        concurrent tasks as a single unit of work.
+
+    </p>
+
+    <p>
+
+        This makes concurrent task management easier
+        to reason about and handle.
+
+    </p>
+
+    <p>
+
+        Structured Concurrency was a preview feature
+        in Java 21.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Preview Features
+    </h2>
+
+    <p>
+
+        Preview features require explicit compiler and
+        runtime support.
+
+    </p>
+
+    <pre><code>
+--enable-preview
+    </code></pre>
+
+    <p>
+
+        For Maven projects, preview support must be
+        configured in the compiler and runtime configuration
+        when the corresponding examples are executed.
+
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        JEP Categories
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                Concurrency
+            </h3>
+
+            <p>
+                JEP 444, JEP 446, JEP 453
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Language
+            </h3>
+
+            <p>
+                JEP 440, JEP 441, JEP 443, JEP 445
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Collections
+            </h3>
+
+            <p>
+                JEP 431
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                String Processing
+            </h3>
+
+            <p>
+                JEP 430
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Native Interoperability
+            </h3>
+
+            <p>
+                JEP 442
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Useful Links
+    </h2>
+
+    <ul>
+
+        <li>
+            <a href="https://openjdk.org/jeps/430"
+               target="_blank">
+                JEP 430 — String Templates
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/431"
+               target="_blank">
+                JEP 431 — Sequenced Collections
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/440"
+               target="_blank">
+                JEP 440 — Record Patterns
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/441"
+               target="_blank">
+                JEP 441 — Pattern Matching for switch
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/442"
+               target="_blank">
+                JEP 442 — Foreign Function & Memory API
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/443"
+               target="_blank">
+                JEP 443 — Unnamed Patterns and Variables
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/444"
+               target="_blank">
+                JEP 444 — Virtual Threads
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/445"
+               target="_blank">
+                JEP 445 — Unnamed Classes and Instance Main Methods
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/446"
+               target="_blank">
+                JEP 446 — Scoped Values
+            </a>
+        </li>
+
+        <li>
+            <a href="https://openjdk.org/jeps/453"
+               target="_blank">
+                JEP 453 — Structured Concurrency
+            </a>
+        </li>
+
+    </ul>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Dinesh Veer
+    </p>
+
+    <p>
+        Java 21 Features Documentation
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
