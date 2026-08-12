@@ -1,0 +1,687 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Installation | Java 21 Features</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Java 21 Features
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="features.html">Features</a>
+
+        <a href="jeps.html">JEPs</a>
+
+        <a href="examples.html">Examples</a>
+
+        <a href="installation.html">Installation</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Installation & Setup
+        </h1>
+
+        <p>
+            Set up Java 21 and run the examples
+            from the repository.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="content">
+
+    <h1>
+        Prerequisites
+    </h1>
+
+    <p>
+        The Java 21 Features project requires:
+    </p>
+
+    <ul>
+
+        <li>
+            JDK 21
+        </li>
+
+        <li>
+            Maven
+        </li>
+
+        <li>
+            Git
+        </li>
+
+        <li>
+            An IDE such as IntelliJ IDEA, Eclipse or VS Code
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        1. Install JDK 21
+    </h2>
+
+    <p>
+        Install a Java Development Kit that supports Java 21.
+    </p>
+
+    <p>
+        After installation, verify the Java version:
+    </p>
+
+    <pre><code>
+java -version
+    </code></pre>
+
+    <p>
+        You should see Java 21 in the version information.
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        2. Verify JAVA_HOME
+    </h2>
+
+    <p>
+        Make sure JAVA_HOME points to your JDK 21 installation.
+    </p>
+
+    <h3>
+        macOS / Linux
+    </h3>
+
+    <pre><code>
+echo $JAVA_HOME
+    </code></pre>
+
+    <h3>
+        Windows
+    </h3>
+
+    <pre><code>
+echo %JAVA_HOME%
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        3. Install Maven
+    </h2>
+
+    <p>
+        Verify that Maven is available:
+    </p>
+
+    <pre><code>
+mvn -version
+    </code></pre>
+
+    <p>
+        Verify that Maven is using JDK 21.
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        4. Clone the Repository
+    </h2>
+
+    <p>
+        Clone the Java 21 Features repository:
+    </p>
+
+    <pre><code>
+git clone https://github.com/dinesh-veer/java-21-features.git
+    </code></pre>
+
+    <p>
+        Move into the project directory:
+    </p>
+
+    <pre><code>
+cd java-21-features
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        5. Import the Project
+    </h2>
+
+    <p>
+        Open the project in your preferred IDE.
+    </p>
+
+    <h3>
+        IntelliJ IDEA
+    </h3>
+
+    <ol>
+
+        <li>
+            Open IntelliJ IDEA.
+        </li>
+
+        <li>
+            Select <strong>Open</strong>.
+        </li>
+
+        <li>
+            Select the <strong>java-21-features</strong> directory.
+        </li>
+
+        <li>
+            Allow IntelliJ IDEA to import the Maven project.
+        </li>
+
+        <li>
+            Configure the project SDK as JDK 21.
+        </li>
+
+    </ol>
+
+    <h3>
+        VS Code
+    </h3>
+
+    <ol>
+
+        <li>
+            Open VS Code.
+        </li>
+
+        <li>
+            Open the <strong>java-21-features</strong> directory.
+        </li>
+
+        <li>
+            Install the Java Extension Pack if required.
+        </li>
+
+        <li>
+            Configure JDK 21.
+        </li>
+
+    </ol>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        6. Compile the Project
+    </h2>
+
+    <p>
+        Run:
+    </p>
+
+    <pre><code>
+mvn clean compile
+    </code></pre>
+
+    <p>
+        This cleans the previous build output and compiles
+        the project.
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        7. Run Tests
+    </h2>
+
+    <pre><code>
+mvn test
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        8. Preview Features
+    </h2>
+
+    <p>
+        Some Java 21 examples use preview features.
+        These features require the preview flag.
+    </p>
+
+    <pre><code>
+--enable-preview
+    </code></pre>
+
+    <p>
+        When compiling a standalone Java source file:
+    </p>
+
+    <pre><code>
+javac --enable-preview --release 21 Example.java
+    </code></pre>
+
+    <p>
+        Run the compiled class with:
+    </p>
+
+    <pre><code>
+java --enable-preview Example
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        9. Maven Preview Configuration
+    </h2>
+
+    <p>
+        If the project contains preview-feature examples,
+        configure the Maven compiler accordingly.
+    </p>
+
+    <pre><code>
+&lt;properties&gt;
+
+    &lt;maven.compiler.release&gt;21&lt;/maven.compiler.release&gt;
+
+&lt;/properties&gt;
+
+&lt;build&gt;
+
+    &lt;plugins&gt;
+
+        &lt;plugin&gt;
+
+            &lt;groupId&gt;
+                org.apache.maven.plugins
+            &lt;/groupId&gt;
+
+            &lt;artifactId&gt;
+                maven-compiler-plugin
+            &lt;/artifactId&gt;
+
+            &lt;configuration&gt;
+
+                &lt;compilerArgs&gt;
+
+                    &lt;arg&gt;
+                        --enable-preview
+                    &lt;/arg&gt;
+
+                &lt;/compilerArgs&gt;
+
+            &lt;/configuration&gt;
+
+        &lt;/plugin&gt;
+
+    &lt;/plugins&gt;
+
+&lt;/build&gt;
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        10. Clean Build
+    </h2>
+
+    <p>
+        If you experience compilation problems, perform
+        a clean Maven build:
+    </p>
+
+    <pre><code>
+mvn clean
+mvn compile
+    </code></pre>
+
+    <p>
+        You can also force Maven to update dependencies:
+    </p>
+
+    <pre><code>
+mvn clean install -U
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        11. Verify the Environment
+    </h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>
+                Component
+            </th>
+
+            <th>
+                Command
+            </th>
+
+            <th>
+                Expected
+            </th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+            <td>
+                Java
+            </td>
+
+            <td>
+                <code>java -version</code>
+            </td>
+
+            <td>
+                Java 21
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Compiler
+            </td>
+
+            <td>
+                <code>javac -version</code>
+            </td>
+
+            <td>
+                javac 21
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Maven
+            </td>
+
+            <td>
+                <code>mvn -version</code>
+            </td>
+
+            <td>
+                Maven available
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Git
+            </td>
+
+            <td>
+                <code>git --version</code>
+            </td>
+
+            <td>
+                Git available
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        12. Common Problems
+    </h2>
+
+    <h3>
+        Wrong Java Version
+    </h3>
+
+    <p>
+        If the project is compiled with an older JDK,
+        Java 21 features may not compile.
+    </p>
+
+    <pre><code>
+java -version
+javac -version
+    </code></pre>
+
+
+    <h3>
+        Preview Feature Compilation Error
+    </h3>
+
+    <p>
+        If a preview feature is used without enabling
+        preview support, compilation can fail.
+    </p>
+
+    <p>
+        Add:
+    </p>
+
+    <pre><code>
+--enable-preview
+    </code></pre>
+
+
+    <h3>
+        JAVA_HOME Points to Another JDK
+    </h3>
+
+    <p>
+        Check JAVA_HOME and make sure it points to JDK 21.
+    </p>
+
+
+    <h3>
+        Maven Uses the Wrong JDK
+    </h3>
+
+    <p>
+        Check Maven's Java version:
+    </p>
+
+    <pre><code>
+mvn -version
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Quick Start
+    </h2>
+
+    <pre><code>
+git clone https://github.com/dinesh-veer/java-21-features.git
+
+cd java-21-features
+
+java -version
+
+mvn -version
+
+mvn clean compile
+
+mvn test
+    </code></pre>
+
+</section>
+
+
+<section class="content">
+
+    <h2>
+        Next Steps
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                Explore Features
+            </h3>
+
+            <p>
+                Learn about the major Java 21 features.
+            </p>
+
+            <a href="features.html">
+                Features →
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Explore JEPs
+            </h3>
+
+            <p>
+                Review the corresponding JDK Enhancement Proposals.
+            </p>
+
+            <a href="jeps.html">
+                JEPs →
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Run Examples
+            </h3>
+
+            <p>
+                Explore practical Java 21 examples.
+            </p>
+
+            <a href="examples.html">
+                Examples →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Dinesh Veer
+    </p>
+
+    <p>
+        Java 21 Features Documentation
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
